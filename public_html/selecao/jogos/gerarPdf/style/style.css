@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+*{
+    margin:0;
+    border:0;
+    padding: 0;
+    font-family: 'Roboto', Verdana, "Geneva", Tahoma, sans-serif;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #E5E5E5;
+}
+h2{
+    font-size: 50px;
+}
+main#root{
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+header.game-header {
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 1fr) 1fr;
+    align-items: center;
+    justify-items: center;
+}
+header{
+    display: none;
+}
+header#inter-box{
+    display: none;
+}
+#logo-header {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 50px;
+}
+h2#title-jogo {
+    height: fit-content;
+    width: fit-content;
+    padding: 5px 50px;
+    border-radius: 25px;
+    background-color: #5AA7FF;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    grid-column-start: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+    font-size: 1em;
+}
+section.game-section {
+    height: 99%;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-row: 2/3;
+}
+#regulador-div {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: white;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px 5px 0px 0px;
+}
+div#doc{
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 36/19;
+    background-color: #5AA7FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+div#conteudo-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    display: grid;
+    grid-template-rows: 60% 10% 30%;
+    align-items: center;
+    justify-items: center;
+
+}
+img#borda-certificado{
+    width: 98%;
+}
+article#texto-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2#titulo-certificado{
+    margin-top: 10%;
+    color: #3772b4;
+    font-family: 'Sriracha', cursive;
+    font-size: 1em;
+}
+h3.certificado{
+    text-align: center;
+    color: #3772b4;
+    font-family: 'Sriracha', cursive;
+    font-size: 1em;
+}
+h3.certificado span{
+    font-family: 'Sriracha', cursive;
+}
+div#borda-progresso {
+    border: 2px #3772b4 solid;
+    width: 35%;
+    height: 40%;
+}
+div#barra-progresso{
+    height: 100%;
+    width: 70%;
+    background-color: #3772b4;
+}
+div#assinatura{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3772b4;
+}
+section#fig-container{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+img.figura{
+    position: absolute;
+}
+section#fig-container img:nth-child(1){
+    top: 14%;
+    left: 10%;
+    transform: rotate(15deg);
+    width: 9%;
+}
+section#fig-container img:nth-child(2){
+    top: 60%;
+    width: 12%;
+    left: 9%;
+    transform: rotate(-10deg);
+}
+section#fig-container img:nth-child(3){
+    top: 79%;
+    left: 73%;
+    width: 11%;
+}
+section#fig-container img:nth-child(4){
+    top: 77%;
+    left: 85%;
+    width: 11%;
+    transform: rotate(-10deg);
+}
+section#fig-container img:nth-child(5){
+    left: 75%;
+    top: 10%;
+    width: 18%;
+}
+button#botao-imprimir {
+    height: 10%;
+    background-color: #33c346;
+    border-radius: 10px;
+    padding: 10px 25px;
+    margin-left: 25px;
+}
+button#botao-imprimir:hover{
+    cursor: pointer;
+}
+button#botao-imprimir img{
+    width: 100%;
+    height: 100%;
+}
+
+@page{
+size: A4 landscape;
+margin: 0mm;
+}
+@media not print{
+    div#doc{
+        margin: 25px;
+    }
+    @media(max-width: 900px){
+        h2#titulo-certificado{
+            font-size: 18pt; 
+        }
+        h3.certificado{
+            font-size: 8pt;
+        }
+        footer.footer-grid{
+            display: none;
+        }
+        main#root{
+            display: block;
+        }
+        div#regulador-div{
+            display: grid;
+            grid-template-rows: 15% 70% 15%;
+        }
+        img#logo-header{
+            height: 35px;
+        }
+        button#botao-imprimir {
+            grid-row: 3/4;
+            grid-column: 1/3;
+            height: 60%;
+            margin: 0;
+            padding: 5px 15px;
+            width: 60px;
+        }
+        section#container-nucleo{
+            grid-row: 2/3;
+            grid-column: 1/3;
+            display: grid;
+            grid-template-columns: 5% 90% 5%;
+            height: 100%;
+            align-items: center;
+        }
+        div#doc{
+            grid-column: 2/3;
+            margin: 0;
+            max-width: 500px;
+        }
+        section.game-section{
+            display: block;
+        }
+        header#out-box{
+            display: none;
+        }
+        header#inter-box{
+            display: grid;
+            grid-column: 1/3;
+        }
+    }
+    @media(min-width: 901px) AND (max-width: 1300px){
+        h2#titulo-certificado{
+            font-size: 25pt; 
+        }
+        h3.certificado{
+            font-size: 12pt;
+        }
+        div#doc{
+            max-width: 800px;
+        }
+    }
+    @media(min-width: 1301px) AND (max-width: 1900px){
+        h2#titulo-certificado{
+            font-size: 40pt; 
+        }
+        h3.certificado{
+            font-size: 16pt;
+        }
+        div#doc{
+            max-width: 1000px;
+        }
+    }
+    @media(min-width: 1900px){
+        h2#titulo-certificado{
+            font-size: 50pt; 
+        }
+        h3.certificado{
+            font-size: 20pt;
+        }
+    }
+    @media(orientation: portrait) {
+    
+    
+        section.aviso-orientacao {
+    
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+    
+        div#aviso-orientacao-caixa {
+    
+            width: 80%;
+            padding: 10px;
+            background-color: white;
+            border: 7px solid #1C4459;
+            border-radius: 10px;
+    
+        }
+    
+        h1#texto-orientacao {
+    
+            font-size: 1em;
+            text-align: center;
+            color: #1C4459;
+            text-transform: uppercase;
+    
+        }
+    
+        div#orientacao-imgs {
+    
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: space-evenly;
+        }
+    
+        div.grupo-imagem-orientacao {
+    
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+        }
+    
+        div#orientacao-grupo-horizontal {
+    
+            width: 35%;
+        }
+    
+        div.grupo-imagem-orientacao * {
+    
+            margin-bottom: 10px;
+    
+        }
+    
+        img#vetor-orientacao {
+    
+            max-width: 15%;
+            align-self: center;
+        }
+    
+        div.grupo-imagem-orientacao img {
+    
+            max-width: 90%;
+        }
+    
+    
+        div.grupo-imagem-orientacao img#icone-errado,
+        div.grupo-imagem-orientacao img#icone-certo {
+    
+            max-width: 20%;
+        }
+    
+        h1#texto-orientacao-vertical {
+    
+            font-size: .8em;
+            color: #1C4459;
+        }
+    
+    
+        main#root {
+            display: none;
+        }
+    
+        button#botao-imprimir{
+            display: none;
+        }
+    
+    }
+    @media(orientation: landscape) {
+    
+        section.aviso-orientacao {
+    
+            display: none;
+        }
+    }
+}
+@media print{
+    section.aviso-orientacao {
+        display: none;
+    }
+    *{
+        -webkit-print-color-adjust: exact;
+    }
+    header.game-header{
+        display: none;
+    }
+    footer.footer-grid{
+        display: none;
+    }
+    button#botao-imprimir{
+        display: none;
+    }
+    div#doc{
+        margin: 0 auto;
+    }
+    div#regulador-div{
+        display: block;
+    }
+    section.game-section{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main#root{
+        display: flex;
+    }
+    h2#titulo-certificado{
+        font-size: 40pt; 
+    }
+    h3.certificado{
+        font-size: 17pt;
+    }
+}
