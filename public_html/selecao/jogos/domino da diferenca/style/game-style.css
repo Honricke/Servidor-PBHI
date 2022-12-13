@@ -26,6 +26,10 @@ header.game-header {
     
 }
 
+header#header-bottom {
+    margin-bottom: 65px;
+}
+
 a.link-logo {
     width: 100%;
     text-align: center;
@@ -97,7 +101,7 @@ div#box-instrucoes {
     -webkit-grid-column: 2;
     -webkit-grid-row: 1;
     margin-top: 0px;
-    margin-left: 10px;
+    margin-left: -10px;
     z-index: 10;
 }
 
@@ -275,8 +279,6 @@ a#span-textbox {
     width: 21px;
 }
 
-
-
 #modal-content{
     border-color: #FDC23E;
     padding: 10px 10px 0 10px;
@@ -338,6 +340,8 @@ button#span-about {
 }
 
 #title-jogo {
+    align-items: center;
+    margin: auto;
 
     background-color: #1C4459;
     color: white;
@@ -353,13 +357,11 @@ button#span-about {
 header {
     background-image: url(../img/bg-image.png);
     background-color: var(--cor-do-body);
-
 }
 
 /* ======== Estilos do jogo ========= */
 
 main#main-body {
-
     height: 100%;
 }
 
@@ -380,27 +382,13 @@ h3#titulo-nucleo {
 
 }
 
-section#container-nucleo {
-
-    width: 80%;
-    height: 130px;
-    border-radius: 10px;
-    background: #FAFAFA;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgba(7, 12, 16, 0.5);
-    box-sizing: border-box;
-    
-}
-
-
 h3#titulo-sequencia {
 
     color: #E2AE3A;
     text-transform: uppercase;
 
+    margin-top: -10px;
+    margin-bottom: 40px;
 }
 
 section#sequencias-conteiner {
@@ -420,7 +408,6 @@ section.drop img {
     margin: 5px;
     align-self: flex-start;
     
-
 }
 
 button#botao-resultado {
@@ -435,9 +422,12 @@ button#botao-resultado {
     border: 5px solid #FFFFFF;
     border-radius: 20px;
 
+    /* margin-top: -70px; */
 }
 
-section#container-sequencia {
+
+
+section#container_sequencia {
 
     width: 80%;
     height: 130px;
@@ -449,43 +439,11 @@ section#container-sequencia {
     display: flex;
     align-items: center;
     justify-items: center;
-
-}
-
-section.drop img {
-
-    margin: 5px;
-    align-self: flex-start;
-
-}
-
-div.slot {
-
-    min-height: 100%;
-    width: 7%;
-    margin: 0px 5px;
-    background-image: url('../img/bg-slot.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 25%;
-    border-bottom: 1px solid #000;
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-div.slot img {
-    margin: unset;
-    max-width: unset;
-}
 
-img.draggable-mirror {
-
-    width: 5% !important;
-}
-
-
-p.container-formas-titulo {
+p.container_formas-titulo {
 
     width: 100%;
     color: #C4C4C4;
@@ -493,10 +451,10 @@ p.container-formas-titulo {
     text-align: center;
 }
 
-section#container-formas {
+section#container_formas {
 
     width: 100%;
-    height: 130px;
+    height: 200px;
     padding: 5px 0px 5px 0px;
     margin-bottom: 0px;
     background-color: #FAFAFA;
@@ -506,15 +464,16 @@ section#container-formas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    align-content: center;
 }
-
 
 img.game-img {
 
     width: 5%;
     margin: 0px 5px;
     align-self: center;
-   
+
 }
 
 img.game-img.pequeno {
@@ -522,26 +481,37 @@ img.game-img.pequeno {
     width: 3.5%;
     margin: 0px 5px;
     align-self: center;
-    
+
 }
+
 @keyframes transicao-imagem {
     from {
-        opacity:0;
+        opacity:1;
+        transform:scale(1);
+      }
+      50% {
+         opacity:0.7;
+         transform:scale(1.3);   
       }
       to {
-        opacity:1;
+        opacity:0.5;
+       transform:scale(1);
       }
-     
+
 }
 img.escolhida{
-    opacity: 0;
+    opacity: 1;
     animation-name:transicao-imagem;
-    animation-duration:2s;
+    animation-duration:2.5s;
     animation-delay:1s;
     animation-fill-mode: forwards;
 }
-section.drop img {
 
+section#container_sequencia div.slot.img {
+    width: 103%;
+}
+
+section.drop img {
     width: 100px;
     margin: 5px;
     align-self: center;
@@ -556,6 +526,19 @@ section.aviso-orientacao{
 div.formas-titulo {
     height: min-content;
     width: 100%;
+}
+
+/*Modal de conclusão*/
+div#modalBox{
+    background: linear-gradient(90deg, #FF5C00 6.72%, #FFA767 93.1%);
+}
+
+div#modalGlass{
+    background-color: rgba(255, 92, 0, 0.3);
+}
+
+button.botao-fim{
+    background-color: #FC7622;
 }
 
 @media(orientation: portrait) {
@@ -678,6 +661,8 @@ div.formas-titulo {
         display: grid;
         grid-template-columns: 0.5fr 700px 0.5fr;
 
+        margin-bottom: 50px;
+
     }
 
     img.logo {
@@ -691,6 +676,7 @@ div.formas-titulo {
         width: fit-content;
         padding: 5px 50px;
         font-size: 1em;
+
 
     }
 
@@ -729,13 +715,12 @@ div.formas-titulo {
 
     button#botao-resultado {
         
-        padding: 5px 10px;
+        padding: 10px 10px;
         font-size: 1.2em;
-         
     }
 }
 
-@media (min-width: 1000px) AND (max-width: 1919px) AND (orientation: landscape){
+@media (min-width: 800px) AND (max-width: 1919px) AND (orientation: landscape){
 
     h2#title-jogo {
 
@@ -836,45 +821,38 @@ div.formas-titulo {
     
     }
 
-    section#container-nucleo {
+    section#container_sequencia {
         
-        width: 80%;
-        height: 80px;
+        width: 90%;
+        height: 110px;
         padding: 0px 10px;
-    }
-
-    section#container-sequencia {
-        
-        width: 80%;
-        height: 80px;
     
     }
 
-    section#container-formas {
+    section#container_formas {
         width: 100%;
-        height: 80px;
-        justify-content: center;
-        align-items: baseline;
-        align-content: center;
+        height: 110px;
     }
 
     img.game-img {
-
-        width: 45px;
+        width: 60px;
         max-width: unset;
-        align-self: unset;
     }
 
     img.game-img.pequeno {
-
-        width: 30px;
+        width: 45px;
         max-width: unset;
-        align-self: unset;
+    }
+
+    section#container_sequencia div.slot img {
+        width: 59px;
+    }
+    section#container_sequencia div.slot img.pequeno {
+        width: 45px;
     }
 
     button#botao-resultado {
-
-        padding: 5px 10px;
+        padding: 10px 10px;
         font-size: 1em;
     }
 
@@ -882,41 +860,43 @@ div.formas-titulo {
 
 @media (min-width: 1920px) AND (max-width: 4000px) and (orientation: landscape){
 
-    section#container-nucleo {
-        
-        width: 80%;
-        height: 110px;
+    section#container_sequencia {
+        width: 90%;
+        height: 200px;
         padding: 0px 10px;
     }
 
-    section#container-sequencia {
+    /* section#container_sequencia {
         
         width: 80%;
         height: 110px;
     
-    }
+    } */
 
-    section#container-formas {
+    section#container_formas {
         width: 100%;
-        height: 105px;
-        justify-content: center;
-        align-items: baseline;
-        align-content: center;
+        height: 110px;
     }
 
     img.game-img {
-
-        width: 60px;
+        width: 75px;
         max-width: unset;
-        align-self: unset;
-
     }
 
     img.game-img.pequeno {
-
-        width: 40px;
+        width: 60px;
         max-width: unset;
-        align-self: unset;
+    }
 
+    div.slot {
+        width: 100px;
+    }
+
+    section#container_sequencia div.slot img {
+        width: 75px;
+    }
+
+    section#container_sequencia div.slot img.pequeno {
+        width: 60px;
     }
 }
