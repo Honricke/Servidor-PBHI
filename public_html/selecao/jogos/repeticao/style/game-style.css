@@ -188,8 +188,7 @@ p#textbox-fase{
 
 }
 
-div.conteiner-botoes {
-
+div.conteiner_botoes {
     width: 100%;
     height: 100%;
     display: flex;
@@ -198,9 +197,42 @@ div.conteiner-botoes {
     justify-content: space-between;
 }
 
+span.ativa-desativa-audio img {
+    width: 38px;
+    padding: 2px 2px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    border: 3px solid white;
+    background-color: rgb(96, 96, 96);
+    align-self: center;
+}
+
+span.repetir-audio img {
+    width: 38px;
+    height: 38px;
+    padding: 2px 2px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    border: 3px solid white;
+    background-color: rgb(96, 96, 96);
+    align-self: center;
+}
+
+span.repetir-audio {
+    font-size: 17px;
+    margin-left: -3.5px;
+    margin-top: -2px;
+}
 
 div.botoes-janela {
-    
     width: 100%;
     margin-top: -30px;
     display: flex;
@@ -284,62 +316,12 @@ button#botao-de-voz-desligado-modal {
     border: 5px solid #FFFFFF;
     border-radius: 20px;
     font-weight: bold;
-}
-
-div#botoes-de-audio{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    margin-left: -40px;
 } 
-
-button#botao-ativar-voz {
-
-    width: 38px;
-    height: 38px;
-    padding: 2px 8px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-    font-size: 25px;
-    font-weight: 800;
-    color: white;
-    text-align: center;
-    border: 3px solid white;
-    background-color: rgb(96, 96, 96);
-    align-self: center;
-
-}
 
 p#botao-voz-instrucao {
     margin-top: -3px;
     margin-left: -6px;
     font-size: 23px;
-}
-
-button#botao-repetir-voz {
-    width: 38px;
-    height: 38px;
-    padding: 2px 8px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-    font-size: 25px;
-    font-weight: 800;
-    color: white;
-    text-align: center;
-    border: 3px solid white;
-    background-color: rgb(96, 96, 96);
-    align-self: center;
-}
-
-p#repetir-voz {
-    font-size: 17px;
-    margin-left: -3.5px;
-    margin-top: -2px;
-}
-
-#botao-falar {
-    display: inline-block;
 }
 
 #modal-content {
